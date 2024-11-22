@@ -1,15 +1,17 @@
 import os
 from pathlib import Path
-import random
-from synthesis.synthesize import load_model
-import time
-import argparse
+
 import logging
 from os.path import dirname, abspath
 import sys
 
 sys.path.append(dirname(dirname(abspath(__file__))))
 logging.getLogger().setLevel(logging.INFO)
+
+import random
+from synthesis.synthesize import load_model
+import time
+import argparse
 
 import torch
 import torch.nn as nn
@@ -298,7 +300,7 @@ if __name__ == "__main__":
     """Train a tacotron2 model"""
     parser = argparse.ArgumentParser(description="Train a tacotron2 model")
     parser.add_argument("-m", "--metadata_path", type=str, help="metadata path")
-    parser.add_argument("-a", "--audio_directory", type=str, help="directory to audio")
+    parser.add_argument("-d", "--audio_directory", type=str, help="directory to audio")
     parser.add_argument("-o", "--output_directory", type=str, help="directory to save checkpoints")
     parser.add_argument("-c", "--checkpoint_path", required=False, type=str, help="checkpoint path")
     parser.add_argument("-e", "--epochs", default=8000, type=int, help="num epochs")
@@ -323,7 +325,7 @@ if __name__ == "__main__":
         audio_directory=args.audio_directory,
         output_directory=args.output_directory,
         metadata_path=args.metadata_path,
-        alphabet_path=args.alphabet_path,
+        # alphabet_path=args.alphabet_path,
         checkpoint_path=args.checkpoint_path,
         epochs=args.epochs,
         batch_size=args.batch_size,

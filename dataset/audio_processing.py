@@ -28,6 +28,7 @@ def convert_audio(input_path):
         Path of the converted audio
     """
     assert os.path.isfile(input_path), f"{input_path} does not exist"
+    print(input_path)
     output_path = input_path.split(".")[0] + "-converted.wav"
     assert not os.path.isfile(output_path), f"{output_path} already exists"
     check_output(

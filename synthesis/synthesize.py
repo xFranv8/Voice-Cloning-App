@@ -119,7 +119,7 @@ def synthesize(
     vocoder=None,
     silence_padding=0.15,
     sample_rate=22050,
-    max_decoder_steps=1000,
+    max_decoder_steps=1000000,
     split_text=False,
 ):
     """
