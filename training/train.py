@@ -325,7 +325,6 @@ if __name__ == "__main__":
         audio_directory=args.audio_directory,
         output_directory=args.output_directory,
         metadata_path=args.metadata_path,
-        # alphabet_path=args.alphabet_path,
         checkpoint_path=args.checkpoint_path,
         epochs=args.epochs,
         batch_size=args.batch_size,
